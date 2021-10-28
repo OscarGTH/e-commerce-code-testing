@@ -9,8 +9,7 @@
   },
   "jest": {
     "setupFilesAfterEnv": [
-      "jest-extended/all",
-      "jest-chain"
+      "jest-extended/all"
     ],
     "transform": {}
   },
