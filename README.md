@@ -1,5 +1,5 @@
 # e-commerce-code-testing
-This repository contains unit and integration test for an e-commerce Javascript library. 
+This repository contains unit and integration test for an e-commerce Javascript library! 
 
 This is based on a [project template](https://github.com/otula/COMP.SE.200-2021-2022-1) for students participating in Software Testing course
 at Tampere University.
