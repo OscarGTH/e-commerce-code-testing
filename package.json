@@ -5,13 +5,19 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no tests are implemented yet \" && exit 1"
+    "test": "node --experimental-vm-modules node_modules/.bin/jest"
+  },
+  "jest": {
+    "testEnvironment": "jest-environment-node",
+    "setupFilesAfterEnv": ["jest-extended/all","jest-chain"],
+    "transform": {}
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "jest": "^27.3.1",
     "jest-chain": "^1.1.5",
+    "jest-environment-node": "^27.3.1",
     "jest-extended": "^1.1.0"
   },
   "devDependencies": {}
