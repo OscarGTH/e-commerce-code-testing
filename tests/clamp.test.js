@@ -28,3 +28,7 @@ test('returns clamped value with values 0.5,0.6,1.5', () => {
   expect(clamp(0.5,0.6,1.5)).toBe(0.6);
 });
 
+test('returns NaN when given NaN', () => {
+    expect(clamp(NaN, NaN, NaN)).toBe(NaN);
+});
+

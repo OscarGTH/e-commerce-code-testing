@@ -31,3 +31,8 @@ it('filters non-equal things', () => {
     .toEqual(['dairy']);
 });
 
+it('does not change a null', () => {
+  expect(filter(null, isEven))
+    .toEqual(null);
+});
+

@@ -44,3 +44,8 @@ test('testing emptiness of zero filled Int8Array', () => {
   expect(isEmpty(new Int8Array(2).fill(0))).toBeFalse();
 });
 
+test('testing emptiness of prototype object', () => {
+  var testDate = new Date();
+  expect(isEmpty(Object.getPrototypeOf(testDate))).toBeTrue();
+});
+

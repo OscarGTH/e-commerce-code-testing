@@ -25,7 +25,7 @@ test('negative number is not a length', () => {
     .toBe(false);
 });
 
-test('numbre 35.5 is not a length', () => {
+test('number 35.5 is not a length', () => {
   expect(isLength(35.5))
     .toBe(false);
 });
