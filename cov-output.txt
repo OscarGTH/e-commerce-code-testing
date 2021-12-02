@@ -1,0 +1,231 @@
+
+> software-testing-assignment@1.0.0 coverage /home/oskari/Documents/e-commerce-code-testing
+> node --experimental-vm-modules node_modules/.bin/jest --coverage
+
+(node:2310) ExperimentalWarning: VM Modules is an experimental feature. This feature could change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL tests/filter.test.js
+  ● does not change an empty array
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   Array [],
+    + ]
+
+       9 | it('does not change an empty array', () => {
+      10 |   expect(filter([], isEven))
+    > 11 |     .toEqual([]);
+         |      ^
+      12 | });
+      13 |
+      14 | it('filters even numbers', () => {
+
+      at Object.<anonymous> (tests/filter.test.js:11:6)
+
+  ● does not change a null
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: null
+    Received: [[]]
+
+      34 | it('does not change a null', () => {
+      35 |   expect(filter(null, isEven))
+    > 36 |     .toEqual(null);
+         |      ^
+      37 | });
+      38 |
+      39 |
+
+      at Object.<anonymous> (tests/filter.test.js:36:6)
+
+FAIL tests/compact.test.js
+  ● does not compact truthy values
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 0
+
+      Array [
+    -   "hello",
+        true,
+      ]
+
+      3 | it('does not compact truthy values', () => {
+      4 |   expect(compact(["hello", true]))
+    > 5 |     .toEqual(['hello', true]);
+        |      ^
+      6 | });
+      7 |
+      8 | it('does not change an empty list', () => {
+
+      at Object.<anonymous> (tests/compact.test.js:5:6)
+
+  ● gets rid of 0
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 1
+
+    - Array [
+    -   "hello",
+    - ]
+    + Array []
+
+      13 | it('gets rid of 0', () => {
+      14 |   expect(compact([0, 'hello']))
+    > 15 |     .toEqual(['hello']);
+         |      ^
+      16 | });
+      17 |
+      18 | it('gets rid of all falsy values', () => {
+
+      at Object.<anonymous> (tests/compact.test.js:15:6)
+
+FAIL tests/clamp.test.js
+  ● returns clamped value with values 2,1,3
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 2
+    Received: 1
+
+      14 |
+      15 | test('returns clamped value with values 2,1,3', () => {
+    > 16 |   expect(clamp(2,1,3)).toBe(2);
+         |                        ^
+      17 | });
+      18 |
+      19 | test('returns clamped value with values 3,1,3', () => {
+
+      at Object.<anonymous> (tests/clamp.test.js:16:24)
+
+  ● returns clamped value with values 3,1,3
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 3
+    Received: 1
+
+      18 |
+      19 | test('returns clamped value with values 3,1,3', () => {
+    > 20 |   expect(clamp(3,1,3)).toBe(3);
+         |                        ^
+      21 | });
+      22 |
+      23 | test('returns clamped value with values 4,1,3', () => {
+
+      at Object.<anonymous> (tests/clamp.test.js:20:24)
+
+  ● returns clamped value with values 4,1,3
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 3
+    Received: 1
+
+      22 |
+      23 | test('returns clamped value with values 4,1,3', () => {
+    > 24 |   expect(clamp(4,1,3)).toBe(3);
+         |                        ^
+      25 | });
+      26 |
+      27 | test('returns clamped value with values 0.5,0.6,1.5', () => {
+
+      at Object.<anonymous> (tests/clamp.test.js:24:24)
+
+FAIL tests/defaultTo.test.js
+  ● test with NaN and number as default
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 5
+    Received: NaN
+
+       6 |
+       7 | test('test with NaN and number as default', () => {
+    >  8 |   expect(defaultTo(NaN, 5)).toBe(5);
+         |                             ^
+       9 | });
+      10 |
+      11 | test('test with null and string as default', () => {
+
+      at Object.<anonymous> (tests/defaultTo.test.js:8:29)
+
+PASS tests/isEmpty.test.js
+PASS tests/capitalize.test.js
+PASS tests/isObjectLike.test.js
+PASS tests/isObject.test.js
+PASS tests/slice.test.js
+PASS tests/isLength.test.js
+----------------------|---------|----------|---------|---------|-------------------
+File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------------|---------|----------|---------|---------|-------------------
+All files             |   37.68 |    32.14 |   29.16 |   37.81 |                   
+ add.js               |       0 |      100 |       0 |       0 | 16                
+ at.js                |       0 |      100 |       0 |       0 | 19                
+ camelCase.js         |       0 |        0 |       0 |       0 | 24-27             
+ capitalize.js        |     100 |      100 |     100 |     100 |                   
+ castArray.js         |       0 |        0 |       0 |       0 | 34-35             
+ ceil.js              |       0 |      100 |     100 |       0 | 22                
+ chunk.js             |       0 |        0 |       0 |       0 | 23-35             
+ clamp.js             |     100 |       90 |     100 |     100 | 26                
+ compact.js           |     100 |      100 |     100 |     100 |                   
+ countBy.js           |       0 |        0 |       0 |       0 | 5-37              
+ defaultTo.js         |     100 |      100 |     100 |     100 |                   
+ defaultToAny.js      |       0 |      100 |       0 |       0 | 29                
+ difference.js        |       0 |        0 |       0 |       0 | 25                
+ divide.js            |       0 |      100 |       0 |       0 | 16                
+ drop.js              |       0 |        0 |       0 |       0 | 27-28             
+ endsWith.js          |       0 |        0 |       0 |       0 | 24-34             
+ eq.js                |       0 |        0 |       0 |       0 | 32                
+ every.js             |       0 |        0 |       0 |       0 | 23-31             
+ filter.js            |     100 |      100 |     100 |     100 |                   
+ get.js               |       0 |        0 |       0 |       0 | 28-29             
+ isArguments.js       |       0 |        0 |       0 |       0 | 20                
+ isArrayLike.js       |     100 |      100 |     100 |     100 |                   
+ isArrayLikeObject.js |       0 |        0 |       0 |       0 | 28                
+ isBoolean.js         |       0 |        0 |       0 |       0 | 20                
+ isBuffer.js          |     100 |    41.17 |     100 |     100 | 4-16              
+ isDate.js            |       0 |        0 |       0 |       0 | 6-25              
+ isEmpty.js           |     100 |    89.47 |     100 |     100 | 49,62             
+ isLength.js          |     100 |      100 |     100 |     100 |                   
+ isObject.js          |     100 |      100 |     100 |     100 |                   
+ isObjectLike.js      |     100 |      100 |     100 |     100 |                   
+ isSymbol.js          |       0 |        0 |       0 |       0 | 19-20             
+ isTypedArray.js      |      80 |    66.66 |      50 |      80 | 27                
+ keys.js              |       0 |        0 |       0 |       0 | 32                
+ map.js               |       0 |        0 |       0 |       0 | 20-27             
+ memoize.js           |       0 |        0 |       0 |       0 | 44-62             
+ reduce.js            |       0 |        0 |       0 |       0 | 39-41             
+ slice.js             |     100 |     87.5 |     100 |     100 | 30,35             
+ toFinite.js          |       0 |        0 |       0 |       0 | 4-37              
+ toInteger.js         |       0 |        0 |       0 |       0 | 29-32             
+ toNumber.js          |       0 |        0 |       0 |       0 | 5-60              
+ toString.js          |      30 |     8.33 |      50 |   33.33 | 31-39             
+ upperFirst.js        |     100 |      100 |     100 |     100 |                   
+ words.js             |       0 |        0 |       0 |       0 | 3-35              
+----------------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 4 failed, 6 passed, 10 total
+Tests:       8 failed, 62 passed, 70 total
+Snapshots:   0 total
+Time:        5.439 s
+Ran all test suites.
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! software-testing-assignment@1.0.0 coverage: `node --experimental-vm-modules node_modules/.bin/jest --coverage`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the software-testing-assignment@1.0.0 coverage script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/oskari/.npm/_logs/2021-12-02T18_40_15_159Z-debug.log

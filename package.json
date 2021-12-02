@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
-    "coveralls": "node --experimental-vm-modules node_modules/.bin/jest --coverage && coveralls < coverage/lcov.info"
+    "coverage": "node --experimental-vm-modules node_modules/.bin/jest --coverage"
   },
   "jest": {
     "collectCoverageFrom":  [
