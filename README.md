@@ -12,7 +12,7 @@ This repository contains unit and integration test for an e-commerce Javascript 
 - `git clone https://github.com/OscarGTH/e-commerce-code-testing.git`
 6. Navigate to e-commerce-code-testing folder
 - `cd e-commerce-code-testing`
-7. Install required modules
+7. Install required modules (jest and jest-extended)
 - `npm i`
 8. Run the tests
 - `npm run coverage`
