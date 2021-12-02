@@ -9,9 +9,9 @@
     "coverage": "node --experimental-vm-modules node_modules/.bin/jest --coverage"
   },
   "jest": {
-    "collectCoverageFrom":  [
-	  "src/*.js"
-    ],  
+    "collectCoverageFrom": [
+      "src/*.js"
+    ],
     "setupFilesAfterEnv": [
       "jest-extended/all"
     ],
@@ -23,8 +23,5 @@
     "jest": "^27.3.1",
     "jest-chain": "^1.1.5",
     "jest-extended": "^1.1.0"
-  },
-  "devDependencies": {
-    "coveralls": "^3.1.1"
   }
 }
